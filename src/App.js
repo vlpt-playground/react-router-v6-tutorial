@@ -7,7 +7,10 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import MyPage from './pages/MyPage';
 import NotFound from './pages/NotFound';
-import Profile from './pages/Profile';
+import Mealplans from './pages/Mealplans';
+import BottomNav from './BottomNav';
+import First from "./pages/Home";
+import Second from "./pages/Second";
 
 const App = () => {
   return (
@@ -15,14 +18,15 @@ const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/profiles/:username" element={<Profile />} />
+        <Route path="/Mealplans" element={<Mealplans />} />
       </Route>
       <Route path="/articles" element={<Articles />}>
-        <Route path=":id" element={<Article />} />
-      </Route>
+      <Route path=":id" element={<Article />} />
+        </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/mypage" element={<MyPage />} />
       <Route path="*" element={<NotFound />} />
+      <Route index element={<BottomNav />} />
     </Routes>
   );
 };
